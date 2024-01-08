@@ -1,0 +1,17 @@
+{
+  "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
+  "configurations": [
+
+    {
+      "type": "node-terminal",
+      "name": "Current-TS-File",
+      "request": "launch",
+      "command": "node -r ts-node/register ${file}",
+      "sourceMaps": true,
+      "outFiles": [
+        "*.js"
+      ]
+    }
+
+  ]
+}

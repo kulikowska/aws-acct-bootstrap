@@ -1,0 +1,11 @@
+**/dist/**
+.archive/**
+.history/**
+tmp/**
+**/*.guard.ts
+!.env.json
+**/*.bundle.js
+**/cdk.out/**
+**/cdk.context.json
+**/next.config.js
+

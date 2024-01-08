@@ -1,0 +1,23 @@
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+#maintenance
+**/.history/
+**/tmp/
+**/temp/
+**/logs/
+**/.scratch/
+set-env.bat
+
+#caches
+**/.cache/
+**/cache/
+
+#private
+acc-settings.json

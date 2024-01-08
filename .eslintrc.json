@@ -1,0 +1,51 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "ignorePatterns": ["node_modules/", "**/*.guard.ts", "tmp/*", ".history/*"],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    },
+    {
+      "files": ["**/*.guard.ts", "tmp/*", ".history/*"],
+      "rules": {
+        "*": "off"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/*": "off"
+      },
+      "parser": "espree"
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "project": ["./tsconfig.json"],
+    "sourceType": "module",
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint"],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unsafe-return": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "@typescript-eslint/no-unsafe-member-access": "warn",
+    "@typescript-eslint/no-unsafe-assignment": "warn",
+    "@typescript-eslint/no-unsafe-call": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "quotes": ["warn", "single"]
+  }
+}
