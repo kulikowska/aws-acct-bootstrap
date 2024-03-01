@@ -1,1 +1,6 @@
-{}
+{
+  "gussae-paycode-customer-v2-653991346912-dev": {
+    "GitHubActionsAwsAccessRoleName": "GitHubAwsOidc-gussae-paycode-customer-v2-653991346912-dev",
+    "GitHubActionsAwsAccessRoleArn": "arn:aws:iam::653991346912:role/GitHubAwsOidc-gussae-paycode-customer-v2-653991346912-dev"
+  }
+}

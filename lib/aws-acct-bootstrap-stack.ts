@@ -3,7 +3,9 @@ import { Construct } from 'constructs';
 import GitHubActionsAwsAccess from './GitHubActionsAwsAccess';
 import { GithubActionsAwsAccessSettings } from '../types/types';
 export interface BootstrapStackProps extends StackProps {
+  namespace: string;
   gitHubActionsAwsAccessEnvSettings: GithubActionsAwsAccessSettings;
+  profile: string;
 }
 export class AwsAcctBootstrapStack extends Stack {
   constructor(scope: Construct, id: string, props: BootstrapStackProps) {
@@ -17,6 +19,8 @@ export class AwsAcctBootstrapStack extends Stack {
         githubUsername,
         maximumSessionDurationInSeconds,
       },
+      namespace,
+      profile,
     } = props;
 
     //create githubActionsAwsAccess
@@ -26,6 +30,8 @@ export class AwsAcctBootstrapStack extends Stack {
       {
         allowedIamActionsForGitHubActions,
         maximumSessionDurationInSeconds,
+        namespace: namespace,
+        profile,
         repoConfig: {
           user: githubUsername,
           repo: githubRepoName,

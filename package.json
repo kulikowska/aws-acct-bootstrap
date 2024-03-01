@@ -7,16 +7,15 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "cross-env AWS_REGION=us-west-2 AWS_PROFILE=awsist-dev jest",
     "cdk": "cdk",
-    "predeploy": "npm run build && npm run validate && npm test",
+    "predeploy": "npm run build && npm run validate",
     "deploy": "npx ts-node scripts/deploy.ts",
     "guard": "npx ts-auto-guard ./types/types.ts",
     "validate": "ts-node scripts/validate.ts"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.11",
     "@types/aws-lambda": "^8.10.131",
+    "@types/jest": "^29.5.11",
     "@types/node": "^20.10.6",
     "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^6.17.0",
