@@ -1,15 +1,20 @@
 #!/usr/bin/env node
-import "source-map-support/register";
-import * as cdk from "aws-cdk-lib";
-import { AwsAcctBootstrapStack } from "../lib/aws-acct-bootstrap-stack";
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import 'source-map-support/register';
+import * as cdk from 'aws-cdk-lib';
+import { AwsAcctBootstrapStack } from '../lib/aws-acct-bootstrap-stack';
 import {
   account,
   gitHubActionsAwsAccessEnvSettings,
+  profile,
   region,
-} from "./env-props";
+  namespace,
+} from './env-props';
 
 const app = new cdk.App();
-new AwsAcctBootstrapStack(app, "AcctBootstrapStack", {
+new AwsAcctBootstrapStack(app, namespace, {
+  profile,
   env: { account, region },
   gitHubActionsAwsAccessEnvSettings,
+  namespace,
 });

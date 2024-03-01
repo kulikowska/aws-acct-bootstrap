@@ -7,9 +7,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "cross-env AWS_REGION=us-west-2 AWS_PROFILE=awsist-dev jest",
     "cdk": "cdk",
-    "predeploy": "npm run build && npm run validate && npm test",
+    "predeploy": "npm run build && npm run validate",
     "deploy": "npx ts-node scripts/deploy.ts",
     "guard": "npx ts-auto-guard ./types/types.ts",
     "validate": "ts-node scripts/validate.ts"

@@ -5,7 +5,16 @@ const { GITHUB_ACTIONS_AWS_ACCESS_SETTINGS, DEPLOYMENT_ENV } =
 const { account, region, profile, env } = DEPLOYMENT_ENV;
 
 const gitHubActionsAwsAccessEnvSettings = GITHUB_ACTIONS_AWS_ACCESS_SETTINGS;
-export { account, env, gitHubActionsAwsAccessEnvSettings, region };
+const { githubRepoName, githubUsername } = gitHubActionsAwsAccessEnvSettings;
+const namespace = `${githubUsername}-${githubRepoName}-${account}-${env}`;
+export {
+  account,
+  env,
+  gitHubActionsAwsAccessEnvSettings,
+  profile,
+  region,
+  namespace,
+};
 
 if (require.main === module) {
   console.log(
@@ -15,6 +24,7 @@ if (require.main === module) {
       gitHubActionsAwsAccessEnvSettings,
       profile,
       region,
+namespace,
     }),
   );
 }
