@@ -96,7 +96,7 @@ export default class GitHubActionsAwsAccess extends Construct {
       'GitHubActionsAwsAccessRole',
       {
         //! Generally a bad idea but this is super useful for dynamic role access in github workflows
-        roleName: `GitHubAwsOidc-${namespace}`,
+        roleName: `oidc-${namespace}`,
         assumedBy: new WebIdentityPrincipal(githubIdpArn, accessConditions),
       maxSessionDuration: Duration.seconds(maximumSessionDurationInSeconds),
     },

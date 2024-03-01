@@ -42,12 +42,12 @@ export class AwsAcctBootstrapStack extends Stack {
     new CfnOutput(this, 'GitHubActionsAwsAccessRoleName', {
       value: githubActionsAccess.githubActionsAwsAccessRoleName,
       description: `The roleName of the githubActionsAwsAccess: Username = ${githubUsername}, Repo = ${githubRepoName}`,
-      exportName: `GitHubActionsAwsAccessRoleNameForUser${githubUsername}Repo${githubRepoName}`,
+      exportName: `GitHubActionsAwsAccessRoleNameForUser${namespace}`,
     });
     new CfnOutput(this, 'GitHubActionsAwsAccessRoleArn', {
       value: githubActionsAccess.githubActionsAwsAccessRoleArn,
       description: `The roleArn of the githubActionsAwsAccess: Username = ${githubUsername}, Repo = ${githubRepoName}`,
-      exportName: `GitHubActionsAwsAccessRoleArnForUser${githubUsername}Repo${githubRepoName}`,
+      exportName: `GitHubActionsAwsAccessRoleArnForUser${namespace}`,
     });
   }
 }
